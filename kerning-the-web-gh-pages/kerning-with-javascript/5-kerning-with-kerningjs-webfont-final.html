@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Kerning with CSS</title>
+
+    
+        
+	<!-- Add JQuery - a neat JavaScript library that allows you to do cool things -->
+    
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    
+	<!-- Add Kerning.js script from http://kerningjs.com/ -->
+    
+    <script src="kerning.js"></script>
+    
+    
+	<!-- Pick a Google Font -->
+    
+    
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+    
+	
+	<style>
+		body {
+            font-family: 'PT Sans Caption','Montserrat', sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: 200px;
+            line-height: 0.15em;
+            font-weight: bold;
+            
+
+        }
+        
+        #little-lean {
+
+            -letter-kern: 0.05em 0 0.05em 0;
+            
+            
+            
+                -letter-transform: 
+                    -letter-repeats(
+        2n+1: translate3d(0,-50px,0),
+        even: translate3d(0,50px,0)
+    ); /* wont work with skew below */
+            
+                            -letter-transform: skew(-10deg) none none skew(-20deg);
+            
+}
+        
+        
+
+        
+        /* Layout - Ignore the code below this comment */
+        
+        figcaption {
+            border-top: 1px solid #ececec;
+            color: #ccc;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding-top: 20px;
+        }
+        
+        
+	</style>
+</head>
+<body>
+  
+   <figure>
+        <h1>Wave</h1>
+        <figcaption>Without Kerning</figcaption>
+    </figure>
+    
+    <figure>
+        <h1><span id="little-lean">Wave</span></h1>
+        <figcaption>With Kerning JS</figcaption>
+    </figure>
+
+</body>
+</html>
